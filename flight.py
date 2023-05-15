@@ -26,7 +26,7 @@ class Flight() :
                        print(f"flight capacity is full so {person.name} is could not added. ")
             
             elif(person.money < self.price):
-                    print(f"passanger {person.name} does not have enough money to buy ticket (ticekt price is : {self.price}, passanger's money is {person.money})")
+                    print(f"passanger {person.name} does not have enough money to buy ticket (ticekt price is : {self.price}, passanger's money is {person.money}) the needed money is {self.price-person.money}")
 
     def summary_of_person(self,person):
         if(person in self.passangers):
@@ -46,6 +46,7 @@ class Flight() :
       
         
 flight1 = Flight(3,"Ankara-İstanbul",500)
+flight2 = Flight(8,"Berlin-Madrid",800)
 
 
 
@@ -72,6 +73,22 @@ flight1.summary_of_person(emre)
 flight1.summary_of_person(eren)
 
 
+marla = Person("Marla", 52, "female",200)
+tony = Person("Tony", 24, "male",560)
+montana = Person("Montana", 28, "male",10000)
+ancelotti = Person("Ancelotti", 48, "male",200)
+charles = Person("Charles", 35, "male",200)
+anna = Person("Anna", 27, "female",200)
+thorfinn = Person("Thorfinn", 14, "male",400)
+walter = Person("Walter", 60, "male",40000000)
+hank = Person("Hank", 54, "male",2000)
+dany = Person("Pany", 32, "male",3500)
+pam = Person("Pam", 26, "female",1500)
 
 
+madridPassangers = [marla,tony,montana,ancelotti,charles,anna,thorfinn,walter,hank,dany,pam]
 
+for passanger in madridPassangers:
+     flight2.add_passanger(passanger)
+
+flight2.showPassangers()
